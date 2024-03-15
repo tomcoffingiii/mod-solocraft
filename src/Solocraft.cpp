@@ -40,12 +40,10 @@ class SolocraftConfig : public WorldScript
 public:
     SolocraftConfig() : WorldScript("SolocraftConfig") {}
 
-    void OnBeforeConfigLoad(bool reload) override
+    void OnBeforeConfigLoad(bool /*reload*/) override
     {
-        if (!reload) {
-            // Load Configuration Settings
-            SetInitialWorldSettings();
-        }
+        // Load Configuration Settings
+        SetInitialWorldSettings();
     }
 
     // Load Configuration Settings
@@ -528,7 +526,7 @@ public:
 
             int SpellPowerBonus = 0;
 
-            // Check for an existing No XP Gain flag - other mod compatibility 
+            // Check for an existing No XP Gain flag - other mod compatibility
             if (player->HasFlag(PLAYER_FLAGS, PLAYER_FLAGS_NO_XP_GAIN))
             {
                 SolocraftNoXPFlag = 1;
