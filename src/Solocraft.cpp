@@ -1,3 +1,11 @@
+/* 
+TC3 - Adjusted follows lines to align with Playerbots version of ScriptMgr:
+Line #336: void OnPlayerLogin(Player* player) override becomes void OnLogin(Player* player) override
+Line #344: void OnPlayerLogout(Player* player) override becomes void OnLogout(Player* player) override
+Line #355: void OnPlayerMapChanged(Player* player) override becomes void OnMapChanged(Player* player) override
+Line #367: void OnPlayerGiveXP(Player* player, uint32& amount, Unit* /victim/, uint8 /xpSource/) override becomes void OnGiveXP(Player* player, uint32& amount, Unit* /victim/, uint8 /xpSource/) override
+Line #387: void OnPlayerMapChanged(Player* player) override becomes void OnMapChanged(Player* player) override
+*/
 #include <map>
 #include "Log.h"
 #include "Config.h"
@@ -325,7 +333,7 @@ private:
 public:
     SolocraftAnnounce() : PlayerScript("SolocraftAnnounce") {}
 
-    void OnPlayerLogin(Player* player) override
+    void OnLogin(Player* player) override
     {
         if (SoloCraftEnable && SoloCraftAnnounceModule)
         {
@@ -333,7 +341,7 @@ public:
         }
     }
 
-    void OnPlayerLogout(Player* player) override
+    void OnLogout(Player* player) override
     {
         QueryResult result = CharacterDatabase.Query("SELECT `GUID` FROM `custom_solocraft_character_stats` WHERE `GUID`={}", player->GetGUID().GetCounter());
         if (result)
@@ -344,7 +352,7 @@ public:
         playerInInstanceMap.erase(player->GetGUID());
     }
 
-    void OnPlayerMapChanged(Player* player) override
+    void OnMapChanged(Player* player) override
     {
         if (player->GetMap()->IsDungeon() || player->GetMap()->IsRaid())
         {
@@ -356,7 +364,7 @@ public:
         }
     }
 
-    void OnPlayerGiveXP(Player* player, uint32& amount, Unit* /*victim*/, uint8 /*xpSource*/) override
+    void OnGiveXP(Player* player, uint32& amount, Unit* /*victim*/, uint8 /*xpSource*/) override
     {
         if (SolocraftXPBalEnabled && playerInInstanceMap[player->GetGUID()])
         {
@@ -376,7 +384,7 @@ public:
         return find(SolocraftInstanceExcluded.begin(), SolocraftInstanceExcluded.end(), id) != SolocraftInstanceExcluded.end();
     }
 
-    void OnPlayerMapChanged(Player* player) override
+    void OnMapChanged(Player* player) override
     {
         if (sConfigMgr->GetOption<bool>("Solocraft.Enable", true))
         {
