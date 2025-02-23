@@ -4,7 +4,7 @@
 
 - This version of the solocraft mod is for users who have installed the playerbots-mod using liyunfan1223's custom azerothcore-wotlk build: 
 
-[Build Status](https://github.com/liyunfan1223/azerothcore-wotlk/tree/Playerbot)
+[!Build Status](https://github.com/liyunfan1223/azerothcore-wotlk/tree/Playerbot)
 
 ## Description
 
