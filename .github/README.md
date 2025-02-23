@@ -2,9 +2,9 @@
 
 ## mod-solocraft
 
-- Latest build status with azerothcore:
+- This version of the solocraft mod is for users who have installed the playerbots-mod using liyunfan1223's custom azerothcore-wotlk build: 
 
-[![Build Status](https://github.com/azerothcore/mod-solocraft/workflows/core-build/badge.svg?branch=master&event=push)](https://github.com/azerothcore/mod-solocraft)
+[![Build Status]([https://github.com/azerothcore/mod-solocraft/workflows/core-build/badge.svg?branch=master&event=push)](https://github.com/azerothcore/mod-solocraft](https://github.com/liyunfan1223/azerothcore-wotlk/tree/Playerbot))
 
 ## Description
 
